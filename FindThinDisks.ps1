@@ -5,7 +5,12 @@
  
 # Version 1.0  January 14, 2009
 # Eric Gray
- 
+
+if (-not (Get-PSSnapin VMware.VimAutomation.Core -ErrorAction SilentlyContinue))
+{
+	Add-PSSnapin VMware.VimAutomation.Core
+}
+
 $vmtp = Get-VM
 $vmtp += Get-Template
  
